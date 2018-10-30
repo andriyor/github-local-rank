@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>username</th>
+            {% for month in months %}
+                <th>{{ month }}</th>
+            {% endfor %}
+        </tr>
+
+        {% for user in users %}
+            <tr>
+                <td>{{ user.login }}</td>
+                {% for rank in user.ranks %}
+                    <td>Pos:{{ rank.position  }} Repos: {{ rank.repositories }} Forks: {{ rank.forks }}</td>
+                {% endfor %}
+                </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
